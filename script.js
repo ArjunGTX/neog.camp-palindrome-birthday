@@ -5,7 +5,7 @@ const outputDiv = document.querySelector("#output");
 const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 function showOutput(message) {
-  outputDiv.firstElementChild.innerText = message;
+  outputDiv.firstElementChild.innerHTML = message;
   outputDiv.classList.add("show");
 }
 
@@ -204,11 +204,11 @@ function palindromeClickHandler() {
 
       if (counter1 > counter2) {
         showOutput(
-          `The nearest palindrome date is ${formattedPrevDate.day}-${formattedPrevDate.month}-${formattedPrevDate.year}, you missed by ${counter2} days.`
+          `Oops! you missed by ${counter2} days. The nearest palindrome day is <em>${formattedPrevDate.day}-${formattedPrevDate.month}-${formattedPrevDate.year}</em>.`
         );
       } else {
         showOutput(
-          `The nearest palindrome date is ${formattedNextDate.day}-${formattedNextDate.month}-${formattedNextDate.year}, you missed by ${counter1} days.`
+          `Oops! you missed by ${counter1} days. The nearest palindrome day is <em>${formattedNextDate.day}-${formattedNextDate.month}-${formattedNextDate.year}</em>.`
         );
       }
     } else {
